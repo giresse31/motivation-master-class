@@ -33,13 +33,3 @@ document.addEventListener("DOMContentLoaded", function () {
   showComment(index); // Afficher le premier commentaire au chargement
 });
 
-
-// rédiriger vers la page de paiement quand l'on click sur les btn
-const PayBtn = document.querySelectorAll('.pay-btn');
-
-PayBtn.forEach(btn => {
-  btn.addEventListener('click', (event) => {
-    event.preventDefault();
-    window.open('https://bbzzdbpm.mychariow.shop/formation/checkout');
-  });
-});
