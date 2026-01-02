@@ -1,35 +1,43 @@
 
 document.getElementById('openPage').onclick = function() {
     document.getElementById('page').classList.add('show');
+    document.body.classList.add('noscroll');
 }
 
 document.getElementById('closePage').onclick = function() {
     document.getElementById('page').classList.remove('show');
+    document.body.classList.remove('noscroll');
 }
 
 
-// changé les commentair en fonction des click sur les bouton 
-document.addEventListener("DOMContentLoaded", function () {
-  const comments = document.querySelectorAll(".comment");
-  let index = 0;
+// rédiriger vers la page de paiement quand l'on click sur les btn
+const PayBtn = document.querySelectorAll('.pay-btn');
 
-  function showComment(i) {
-      comments.forEach(comment => comment.classList.remove("show"));
-      comments[i].classList.add("show");
-  }
-
-  document.getElementById("next").addEventListener("click", function (event) {
-      event.preventDefault();
-      index = (index + 1) % comments.length;
-      showComment(index);
+PayBtn.forEach(btn => {
+  btn.addEventListener('click', (event) => {
+    event.preventDefault();
+    window.open('https://bbzzdbpm.mychariow.shop/formation/checkout');
   });
-
-  document.getElementById("prev").addEventListener("click", function (event) {
-      event.preventDefault();
-      index = (index - 1 + comments.length) % comments.length;
-      showComment(index);
-  });
-
-  showComment(index); // Afficher le premier commentaire au chargement
 });
 
+
+
+//show image adv fonctionnality 
+const advSection = document.querySelector('.adv-section');
+const img = advSection.querySelectorAll('img');
+const overlay = document.getElementById('overlay');
+const overlayImg = document.getElementById('overlayImg');
+const closeBtn = document.getElementById('closeBtn');
+
+img.forEach(im => {
+  im.addEventListener('click', () => {
+    overlay.style.display = 'flex';
+    overlayImg.src = im.src;
+    document.body.classList.add('noscroll');
+  });
+});
+
+closeBtn.addEventListener('click', () => {
+  overlay.style.display = 'none';
+  document.body.classList.remove('noscroll');
+});
