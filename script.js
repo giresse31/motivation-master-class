@@ -16,7 +16,7 @@ const PayBtn = document.querySelectorAll('.pay-btn');
 PayBtn.forEach(btn => {
   btn.addEventListener('click', (event) => {
     event.preventDefault();
-    window.open('https://www.pay.moneyfusion.net/formation-masterclass_1753774062299/');
+    window.open('https://boutique.yahistory.com/formation/checkout');
   });
 });
 
