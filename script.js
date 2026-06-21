@@ -1,3 +1,26 @@
+//header script
+const header = document.querySelector('header');
+const hero = document.querySelector('.hero-section');
+
+const headerObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      header.classList.add("on-hero");
+      header.classList.remove("scrolled");
+    } else {
+      header.classList.add("scrolled");
+      header.classList.remove("on-hero");
+    }
+  });
+}, { threshold: .1});
+
+headerObserver.observe(hero);
+
+
+
+
+
+
 
 document.getElementById('openPage').onclick = function() {
     document.getElementById('page').classList.add('show');
