@@ -17,11 +17,6 @@ const headerObserver = new IntersectionObserver((entries) => {
 headerObserver.observe(hero);
 
 
-
-
-
-
-
 document.getElementById('openPage').onclick = function() {
     document.getElementById('page').classList.add('show');
     document.body.classList.add('noscroll');
@@ -60,8 +55,21 @@ img.forEach(im => {
   });
 });
 
-closeBtn.addEventListener('click', () => {
+function closeOverlay() {
   overlay.style.display = 'none';
   document.body.classList.remove('noscroll');
+}
+
+closeBtn.addEventListener('click', closeOverlay);
+
+window.addEventListener('click', (event) => {
+  if(event.target === overlay) {
+    closeOverlay();
+  }
 });
+
+
+//prices fonctionnality 
+const prices = document.querySelectorAll('.price');
+prices.forEach(price => price.innerHTML = '10$');
 

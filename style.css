@@ -61,17 +61,8 @@ header.scrolled {
     font-size: x-large;
 }
 
-@media (max-width: 768px) {
-  
-}
 
 @media (max-width: 480px) {
-  .logo-container h1 {
-    font-size: x-large;
-}
-}
-
-@media (max-width: 360px) {
   .logo-container h1 {
     font-size: large;
 }
@@ -292,8 +283,22 @@ header.scrolled {
 }
 
 @media (max-width: 480px) {
+  
    .hero-section {
     padding-top: 5rem;
+    padding-bottom: 1rem;
+   }
+
+   .paragraph-one {
+    font-size: x-large;
+  }
+
+   .hero-section .content {
+    width: 100%;
+   }
+
+   .hero-content-one {
+     margin-bottom: 1rem;
    }
 
    .paragraph-two {
@@ -302,9 +307,6 @@ header.scrolled {
 }
 
 @media (max-width: 360px) {
-  .paragraph-one {
-    font-size: x-large;
-  }
 
   .hero-section {
     padding-top: 4rem;
@@ -571,7 +573,7 @@ header.scrolled {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #0000003f; 
+  background-color: var(--background-color); 
   top: 0;
   left: 100%;
   width: 100%;
@@ -585,93 +587,32 @@ header.scrolled {
   position: absolute;
   color: var(--text-color);
   background: var(--background-color);
-  padding: 0 .5rem;
+  padding: 0 .45rem;
   border-radius: .3rem;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   top: 1rem;
   left: 1rem;
   cursor: pointer;
 }
 
-.page-section .header-section {
-  background-color: var(--background-color);
+#closePage:hover {
+  transform: scale(1.05);
+  border: .3px solid var(--text-color);
 }
 
 .page-section.show {
   left: 0;
 }
 
-.about-section {
-  color: white;
-  max-width: 900px;
-  margin: 50px auto;
-  padding: 2.5rem;
-  border-radius: .625rem; 
-  text-align: center;
-}
-
-.about-section h2 {
-  margin-bottom: 1.25rem;
-  color: #0057d9;
-}
-
-.about-section p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 15px;
-  text-align: justify;
-}
-
-.highlight {
-  color: darkorange;
-  font-weight: bold;
-}
-
-.reasons, .benefits {
-  text-align: left;
-  margin: 1.25rem 0;
-}
-
-.reasons p,
-.benefits p {
-  font-size: 1.1rem;
-  margin-bottom: .625rem;
-}
-
-.emoji {
-  font-size: 1.5rem;
-  margin-right: 8px;
-}
-
-.cta {
-  display: inline-block;
-  margin-top: 1.25rem;
-  padding: 15px 1.875rem;
-  background-color: #04cb2f;
-  color: #ffffff;
-  font-size: 1.1rem;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 15px;
-  transition: 0.3s;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-.cta:hover {
-  background-color: #04cb2f;
-  transform: scale(1.05);
-}
-
 .module-container {
-  color: #ffffff;
+  color: var(--text-color);
 }
 
 
 .module-container  {
-  width: 900px;
+  width: 600px;
   min-width: 300px;
   margin: auto;
-  background: var(--accent-color);
   padding: 1rem;
   border-radius: .625rem;
 }
@@ -683,32 +624,30 @@ header.scrolled {
   margin: auto;
 }
 
-.module-content label {
-  font-size: 1.1rem;
-}
 
 #email {
   margin-bottom: 1.25rem;
 }
 
-.module-content input, textarea, label, .button {
+.module-content input, textarea {
   padding: 8px;
   margin: 8px auto;
-  width: 90%;
+  width: 100%;
   font-size: 1.1rem;
   border-radius: 0 5px;
   border: 0;
-}
-
-label {
-  padding-bottom: 0;
-  margin-bottom: 0;
+  border: .5px solid #00000037;
 }
 
 textarea {
   border-radius: 0 15px;
 }
 
+.module-content label {
+  font-size: 1.1rem;
+  border: none;
+  margin-top: .5rem;
+}
 
 .module-container h2 {
   margin-bottom: 1.25rem;
@@ -726,6 +665,7 @@ textarea {
   border: none;
   transition: 0.3s;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  margin-top: .5rem;
 }
 
 .button:hover {
@@ -945,7 +885,7 @@ textarea {
 }
 
 .about-container ul li a:hover {
-  color: #050a27;
+   color: #050a27;
 }
 
 
@@ -959,7 +899,7 @@ textarea {
 }
 
 strong {
-  color: darkorange;
+  color: var(--secondary-color);
 }
 
 
@@ -978,6 +918,7 @@ strong {
   display: none;
   justify-content: center;
   align-items: center;
+  z-index: 1000;
 }
 
 .overlay img {
@@ -1038,13 +979,6 @@ strong {
 }
 
 @media (max-width: 479.5px) {
-    .hero-content-two video {
-        width: 100%;
-    }
-
-    .hero-content-two {
-        width: 100%;
-    }
 
     .header-section {
         gap: .625rem;
@@ -1097,8 +1031,7 @@ strong {
     }
 
     .module-container {
-      padding: 0 1.25rem;
-      padding-bottom: 2.5rem;
+      padding: 1.25rem;
     }
 
     .about-section {
