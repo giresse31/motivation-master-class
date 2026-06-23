@@ -1,0 +1,75 @@
+//header script
+const header = document.querySelector('header');
+const hero = document.querySelector('.hero-section');
+
+const headerObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      header.classList.add("on-hero");
+      header.classList.remove("scrolled");
+    } else {
+      header.classList.add("scrolled");
+      header.classList.remove("on-hero");
+    }
+  });
+}, { threshold: .1});
+
+headerObserver.observe(hero);
+
+
+document.getElementById('openPage').onclick = function() {
+    document.getElementById('page').classList.add('show');
+    document.body.classList.add('noscroll');
+}
+
+document.getElementById('closePage').onclick = function() {
+    document.getElementById('page').classList.remove('show');
+    document.body.classList.remove('noscroll');
+}
+
+
+// rédiriger vers la page de paiement quand l'on click sur les btn
+const PayBtn = document.querySelectorAll('.pay-btn');
+
+PayBtn.forEach(btn => {
+  btn.addEventListener('click', (event) => {
+    event.preventDefault();
+    window.open('https://boutique.yahistory.com/formation/checkout');
+  });
+});
+
+
+
+//show image adv fonctionnality 
+const advSection = document.querySelector('.adv-section');
+const img = advSection.querySelectorAll('img');
+const overlay = document.getElementById('overlay');
+const overlayImg = document.getElementById('overlayImg');
+const closeBtn = document.getElementById('closeBtn');
+
+img.forEach(im => {
+  im.addEventListener('click', () => {
+    overlay.style.display = 'flex';
+    overlayImg.src = im.src;
+    document.body.classList.add('noscroll');
+  });
+});
+
+function closeOverlay() {
+  overlay.style.display = 'none';
+  document.body.classList.remove('noscroll');
+}
+
+closeBtn.addEventListener('click', closeOverlay);
+
+window.addEventListener('click', (event) => {
+  if(event.target === overlay) {
+    closeOverlay();
+  }
+});
+
+
+//prices fonctionnality 
+const prices = document.querySelectorAll('.price');
+prices.forEach(price => price.innerHTML = '10$');
+
