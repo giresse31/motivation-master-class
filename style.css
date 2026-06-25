@@ -272,7 +272,7 @@ header.scrolled {
   }
 
   .paragraph-one {
-    font-size: xx-large;
+    font-size: 2rem;
   }
 }
 
@@ -290,7 +290,7 @@ header.scrolled {
    }
 
    .paragraph-one {
-    font-size: x-large;
+    font-size: 1.8rem;
   }
 
    .hero-section .content {
@@ -307,6 +307,9 @@ header.scrolled {
 }
 
 @media (max-width: 360px) {
+   .paragraph-one {
+    font-size: 1.5rem;
+  }
 
   .hero-section {
     padding-top: 4rem;
@@ -358,8 +361,8 @@ header.scrolled {
   transform: scale(1.02);
 }
 
-.adv-content-one .items h2 {
-    font-size: 24px;
+.adv-section h2 {
+    font-size: 1.5rem;
 }
 
 .adv-content-one .items p,
@@ -370,9 +373,9 @@ header.scrolled {
 
 
 .adv-content-four {
-  width: 95%;
+  width: 90%;
   margin: auto;
-  padding: 50px 1.25rem;
+  padding: 50px 1rem;
   border-radius: .625rem;
   display: flex;
   gap: 50px;
@@ -431,8 +434,7 @@ header.scrolled {
   max-width: 1200px;
   margin: auto;
   border-radius: .625rem;
-  width: 95%;
-  margin: auto;
+  width: 90%;
   box-shadow: 0px 4px .625rem rgba(33, 4, 163, 0.1);
   transition: box-shadow .3s ease-in-out,transform .2s ease-in-out;
 }
@@ -464,6 +466,31 @@ header.scrolled {
     display: none;
 }
 
+@media (max-width: 768px) {
+  .adv-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .adv-content-four {
+    gap: 1.875rem;
+  }
+
+  .adv-content-one .items {
+    gap: 1.875rem;
+  }
+}
+
+
+/* section-container */
+.section-container h2 {
+  margin-bottom: 1.875rem;
+  margin-left: .625rem;
+  font-size: 1.5rem;
+}
+
+.section-container p {
+  font-size: 1.05rem;
+}
 
 
 /* program-section */
@@ -474,13 +501,6 @@ header.scrolled {
   padding: .625rem;
   margin-bottom: 2.5rem;
 }
-
-.program-section h2 {
-  margin-bottom: 1.875rem;
-  width: 100%;
-  text-align: center;
-}
-
 
 .positive-list {
   display: flex;
@@ -511,12 +531,8 @@ header.scrolled {
   margin-bottom: 2.5rem;
 }
 
-.why-section h2 {
-  text-align: center;
-}
-
 .why-section p {
-  margin-left: 1.25rem;
+  margin-left: .625rem;
 }
 
 
@@ -529,16 +545,9 @@ header.scrolled {
   margin-bottom: 2.5rem;
 }
 
-.action-container h2 {
-  margin-bottom: 1.875rem;
-  width: 100%;
-  text-align: center;
-}
-
 .action-container p {
-  margin-left: 1.25rem;
+  margin-left: .625rem;
   margin-bottom: 1.25rem;
-  font-size: 1.1rem;
   line-height: 1.6;
 }
 
@@ -564,6 +573,13 @@ header.scrolled {
 
 .bti {
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .section-container h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
 }
 
 
@@ -689,6 +705,7 @@ textarea {
 .comment-section h2 {
   margin-bottom: 2rem;
   margin-left: 2%;
+  font-size: 1.5rem;
 }
 
 .comment-section .comment-content {
@@ -793,6 +810,13 @@ textarea {
   color: #ffffff;
 }
 
+@media (max-width: 768px) {
+  .comment-section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
 
 /* contact-section */
 .contact-section {
@@ -803,6 +827,7 @@ textarea {
 .contact-section h2 {
   text-align: center;
   margin-bottom: 15px;
+  font-size: 1.5rem;
 }
 
 .contact-content {
@@ -836,7 +861,7 @@ textarea {
 }
 
 .contact-content a:hover {
-  color: #04cb2f;
+  color: var(--secondary-color);
   transition: .3s;
 }
 
@@ -860,6 +885,12 @@ textarea {
 
 .media a:last-child {
   margin-right: 0;
+}
+
+@media (max-width: 768px) {
+  .contact-section h2 {
+    font-size: 1.3rem;
+  }
 }
 
 /* about */
@@ -959,7 +990,6 @@ strong {
 
   .adv-content-four {
     display: flex;
-    width: 95%;
   }
 
   .about-section {
@@ -970,10 +1000,6 @@ strong {
   .cta {
     font-size: 1.1rem;
     padding: 15px 25px;
-  }
-
-  .comment-section h2 {
-    margin-left: 1.5rem;
   }
 
 }
