@@ -71,5 +71,5 @@ window.addEventListener('click', (event) => {
 
 //prices fonctionnality 
 const prices = document.querySelectorAll('.price');
-prices.forEach(price => price.innerHTML = '10$');
+prices.forEach(price => price.innerHTML = '23$');
 
